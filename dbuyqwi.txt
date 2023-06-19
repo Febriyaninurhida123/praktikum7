@@ -1,0 +1,6 @@
+ SELECT COUNT(DISTINCT pd.id_proj) AS jumlah_project
+    FROM project_detail pd
+    JOIN karyawan k ON pd.nik = k.nik
+    JOIN departemen d ON k.id_dept = d.id_dept
+JOIN project p on p.id_proj = pd.id_proj
+    WHERE d.nama = 'RnD' AND p.status = 1;
